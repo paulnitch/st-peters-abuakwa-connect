@@ -8,35 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Church color palette - warm and reverent */
+    --background: 45 20% 97%;
+    --foreground: 220 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep navy primary for trust and reverence */
+    --primary: 220 45% 20%;
+    --primary-foreground: 45 25% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm secondary tones */
+    --secondary: 45 15% 92%;
+    --secondary-foreground: 220 25% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 45 10% 95%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Gold accent for elegance */
+    --accent: 45 85% 55%;
+    --accent-foreground: 220 45% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 45 20% 88%;
+    --input: 45 20% 88%;
+    --ring: 45 85% 55%;
 
-    --radius: 0.5rem;
+    /* Design system tokens */
+    --radius: 0.75rem;
+    
+    /* Custom church design tokens */
+    --church-primary: 220 45% 20%;
+    --church-gold: 45 85% 55%;
+    --church-light: 45 25% 98%;
+    --church-warm: 45 20% 92%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--church-primary)), hsl(220 35% 35%));
+    --gradient-section: linear-gradient(180deg, hsl(var(--background)), hsl(var(--church-warm)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--church-light)));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -15px hsl(var(--church-primary) / 0.2);
+    --shadow-card: 0 4px 20px -8px hsl(var(--church-primary) / 0.15);
+    --shadow-gold: 0 0 30px hsl(var(--church-gold) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
