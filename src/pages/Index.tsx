@@ -4,13 +4,51 @@ import About from "@/components/About";
 import Societies from "@/components/Societies";
 import Calendar from "@/components/Calendar";
 import Contact from "@/components/Contact";
+import Announcements from "@/components/Announcements";
+import { useAuth } from "@/hooks/useAuth";
+import { Button } from "@/components/ui/button";
+import { LogIn, Settings } from "lucide-react";
 
 const Index = () => {
+  const { user, isAdmin } = useAuth();
+
   return (
     <div className="min-h-screen">
       <Navigation />
+      
+      {/* Auth/Admin Bar */}
+      <div className="bg-primary/5 border-b">
+        <div className="container mx-auto px-4 py-2">
+          <div className="flex justify-end items-center gap-2">
+            {user ? (
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-muted-foreground">
+                  Welcome back, {user.email}
+                </span>
+                {isAdmin && (
+                  <Button size="sm" variant="outline" asChild>
+                    <a href="/admin">
+                      <Settings className="h-4 w-4 mr-1" />
+                      Admin
+                    </a>
+                  </Button>
+                )}
+              </div>
+            ) : (
+              <Button size="sm" variant="outline" asChild>
+                <a href="/auth">
+                  <LogIn className="h-4 w-4 mr-1" />
+                  Sign In
+                </a>
+              </Button>
+            )}
+          </div>
+        </div>
+      </div>
+
       <Hero />
       <About />
+      <Announcements />
       <Societies />
       <Calendar />
       <Contact />
